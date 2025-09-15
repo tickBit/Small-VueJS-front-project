@@ -14,6 +14,27 @@ body {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.57);
 }
 
+.product-display {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.products-container {
+  text-align: center;
+}
+
+.products {
+  display: inline-flex;
+  flex-direction: row;
+}
+
 #htitle {
   text-align: center;
   color: aliceblue;

@@ -1,9 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
-import cat1 from '@/assets/images/cat1.jpg'
-import cat2 from '@/assets/images/cat2.jpg'
-import cat3 from '@/assets/images/cat3.jpg'
-import cat4 from '@/assets/images/cat4.jpg'
+
+const props = defineProps({
+  image: {
+    type: String,
+    required: true
+  }
+})
 
 const product = ref('Artwork')
 
@@ -27,8 +30,9 @@ const updateVariant = (index) => {
 <template>
   <div class="product-display">
     <div class="product-container">
+    
       <div class="product-image">    
-        <img src="cat1">
+        <img :src="image" alt="Product Image" />
       </div>
       
       </div>
