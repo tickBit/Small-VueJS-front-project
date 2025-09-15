@@ -10,6 +10,10 @@ const props = defineProps({
     type: String,
     required: true
   },
+  name: {
+    type: String,
+    required: true
+  },
 })
 
 const product = ref('Artwork')
@@ -32,7 +36,8 @@ const selectedVariant = computed(() =>
   <div class="product-display">
     <div class="product-container">
     
-      <div class="product-image">    
+      <div class="product-image">
+      <h3>{{ name }}</h3>
         <img :src="image" alt="Product Image" />
           <div v-for="val in variants" :key="val.id">
             <input :id="condition + val.id" type="radio" :name="condition" :value="val.id" v-model="selection" />
