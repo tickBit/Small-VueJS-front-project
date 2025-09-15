@@ -16,10 +16,10 @@ import cat4 from '@/assets/images/cat4.jpg'
   
   <div class="products-container">
   <div class="products">
-    <ProductDisplay :image=cat1></ProductDisplay>
-    <ProductDisplay :image=cat2></ProductDisplay>
-    <ProductDisplay :image=cat3></ProductDisplay>
-    <ProductDisplay :image=cat4></ProductDisplay>
+    <ProductDisplay :image=cat1 condition="c1"></ProductDisplay>
+    <ProductDisplay :image=cat2 condition="c2"></ProductDisplay>
+    <ProductDisplay :image=cat3 condition="c3"></ProductDisplay>
+    <ProductDisplay :image=cat4 condition="c4"></ProductDisplay>
   </div>
   </div>
   
