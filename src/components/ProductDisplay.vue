@@ -16,6 +16,8 @@ const props = defineProps({
   },
 })
 
+const emit = defineEmits(['add-to-cart'])
+
 const selection = ref("")
 
 const variants = ref([
@@ -27,6 +29,9 @@ const selectedVariant = computed(() =>
   variants.value.find(v => v.id === Number(selection.value))
 )
 
+const addToCart = (name, price) => {
+  emit('add-to-cart', name, price)
+}
 
 </script>
 
@@ -45,7 +50,7 @@ const selectedVariant = computed(() =>
             <label>Price: {{ selectedVariant.price }}</label>
           </div>
       
-            <Button v-if=(selection) class="btn-buy">Buy</Button>
+            <button v-if=(selection) class="btn-buy" v-on:click="addToCart(name, selectedVariant.price)">Buy</button>
       </div>
     </div>
   </div>
