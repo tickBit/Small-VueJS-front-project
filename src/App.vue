@@ -9,6 +9,11 @@ import cat4 from '@/assets/images/cat4.jpg'
 
 const artworkTitles = ref(["A Cat dreaming", "A Cat in psychedelic room", "Wondering cat", "A Cat in the dark"])
 
+const c1 = ref("")
+const c2 = ref("")
+const c3 = ref("")
+const c4 = ref("")
+
 </script>
 
 <template>
