@@ -45,6 +45,7 @@ const selectedVariant = computed(() =>
             <label>Price: {{ selectedVariant.price }}</label>
           </div>
       
+            <Button v-if=(selection) class="btn-buy">Buy</Button>
       </div>
     </div>
   </div>
