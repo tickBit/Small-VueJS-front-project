@@ -29,7 +29,10 @@ const addToCart = (name, price) => {
       if (val[0] == name && val[1] == price) count++;
   })
   
-  cartSummary[name + "\n" + price] = count
+  const a = [name + "\n" + price]
+  
+  cartSummary[a] = count
+  
 }
 
 </script>
@@ -48,7 +51,7 @@ const addToCart = (name, price) => {
     <ProductDisplay :image=cat4 :condition="c4" :name=artworkTitles[3] @add-to-cart="addToCart"></ProductDisplay>
   </div>
     <div class="shopping-cart" v-if="showCart">
-      <CartDisplay :products="cartSummary" />
+      <CartDisplay :summary="cartSummary" :products="cart" />
     </div>
   </div>
   
