@@ -32,9 +32,7 @@ const addToCart = (name, price) => {
   const a = [name + "\n" + price]
   
   cartSummary[a] = count
-  
-  console.log(showCart)
-  
+    
 }
 
 </script>

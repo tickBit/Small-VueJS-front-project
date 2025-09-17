@@ -1,6 +1,4 @@
 <script setup>
-import { reactive } from 'vue';
-
 
 const props = defineProps({
   summary: {
@@ -25,19 +23,15 @@ const calculateSum = (products) => {
 }
 
 const removeItem = (summary, products, item) => {
-  
   const name = item.split("\n")[0]
   const price = item.split("\n")[1]
   products.pop([name, price])
     
-  let amount = parseInt(summary[name + "\n" + price])
+  let amount = parseInt(summary[item])
   if (amount > 0) amount--
   
-  summary[name + "\n" + price] = amount;
+  summary[item] = amount;
   
-  if (summary[name + "\n" + price] == 0) {
-    summary = {}
-  }
 }
 
 </script>
@@ -46,8 +40,10 @@ const removeItem = (summary, products, item) => {
 <div v-if="products.length > 0">
   <h3>Your cart:</h3>
   <div v-for="(index, item) in summary" :key="index" class="shopping-cart-item">
+    <div v-if="summary[item] > 0">
     <h2>Product:</h2>
     <div class="cart-info">
+    
       <h3>{{ item.split("\n")[0] }}</h3>
       <h4>{{ item.split("\n")[1] }}</h4>
       <div class="item-qty">
@@ -56,6 +52,7 @@ const removeItem = (summary, products, item) => {
       </div>
     </div>
   </div>
+</div>
   <p>TOTAL: {{ calculateSum(products) }} €</p>
 </div>
 <div v-else>
