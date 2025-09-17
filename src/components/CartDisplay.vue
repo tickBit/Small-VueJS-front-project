@@ -16,21 +16,33 @@ const calculateSum = (products) => {
   let sum = 0;
   
   products.forEach(element => {
-    const amount = element[1].split(" ")[0]
+    const amount = element[1].split(' ')[0]
     sum += parseInt(amount)
   });
   return sum
 }
 
-const removeItem = (summary, products, item) => {
-  const name = item.split("\n")[0]
-  const price = item.split("\n")[1]
-  products.pop([name, price])
-    
-  let amount = parseInt(summary[item])
-  if (amount > 0) amount--
+const rmItem = (summary, products, item) => {
+
+  const name = item.split('\n')[0]
+  const price = item.split('\n')[1]
   
-  summary[item] = amount;
+  products.forEach((prod, index) => {
+    console.log(prod)
+    if (prod[0] == name && prod[1] == price) {
+      console.log("rem")
+      products.splice(index, 1)
+      
+      let amount = parseInt(summary[item])
+      if (amount > 0) amount--
+  
+      summary[item] = amount;
+      return
+    }
+  })
+  
+    
+  
   
 }
 
@@ -48,7 +60,7 @@ const removeItem = (summary, products, item) => {
       <h4>{{ item.split("\n")[1] }}</h4>
       <div class="item-qty">
             <p>Quantity: {{ summary[item] }}</p>
-            <button id="btn-minus" v-on:click="removeItem(summary, products, item)">-</button>
+            <button id="btn-minus" v-on:click="rmItem(summary, products, item)">-</button>
       </div>
     </div>
   </div>
