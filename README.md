@@ -11,3 +11,4 @@ This is my first Vue.js project ever :-)
 
 ### Picture of the app
 
+![VueJS-project](https://github.com/user-attachments/assets/63994338-f730-4130-a916-134c21707f0e)
