@@ -16,7 +16,7 @@ const c4 = ref("")
 
 let cart = reactive([])
 
-const cartSummary = reactive({})
+let cartSummary = reactive({})
 
 let showCart = ref(false);
 
@@ -32,6 +32,8 @@ const addToCart = (name, price) => {
   const a = [name + "\n" + price]
   
   cartSummary[a] = count
+  
+  console.log(showCart)
   
 }
 

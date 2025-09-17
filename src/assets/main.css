@@ -51,9 +51,9 @@ body {
 #cart {
   float:right;
   margin-right: 1rem;
-  padding: 0.8em;
   background-color: aquamarine;
   cursor:pointer;
+  padding: 0.6rem;
 }
 
 .shopping-cart {
@@ -63,6 +63,26 @@ body {
 }
 
 .shopping-cart-item {
+  padding-left: 1.5em;
+  text-align: left;
   background-color:beige;
 }
 
+.cart-info {
+  text-align:left;
+}
+
+.item-qty {
+  display:flex;
+  width: fit-content;
+  height:fit-content;
+}
+
+#btn-minus {
+  font-size: larger;
+  margin-left: 2em;
+  padding-left: 1.0rem;
+  padding-right: 1.0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
